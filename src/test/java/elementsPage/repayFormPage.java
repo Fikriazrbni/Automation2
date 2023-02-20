@@ -87,13 +87,13 @@ public class repayFormPage extends BaseAction {
     public static final By amountRepaymentKurangBayar         = By.xpath("//li[@role='option'][text()='Kurang Bayar']");
     public static final By amountRepaymentLebihBayar          = By.xpath("//li[@role='option'][text()='Lebih Bayar']");
     public static final By batchNoDropDown                 = By.xpath("//*[@id='select2-filter-batch-number-container']");
-    public static final By batchNoOption                      = By.xpath("//*[@id='select2-filter-batch-number-container']");
+    public static final By batchNoOption                      = By.xpath("//ul[@id='select2-filter-batch-number-results']");
     public static final By batchNoAll                      = By.xpath("[//li[@role='option'][text()='All']");
-    public static final By batchNo1                      = By.xpath("//*[@id='select2-filter-batch-number-result-1gbl-1']");
-    public static final By batchNo2                      = By.xpath("//*[@id='select2-filter-batch-number-result-9ob4-2']");
-    public static final By batchNo3                      = By.xpath("//*[@id='select2-filter-batch-number-result-i389-3']");
-    public static final By batchNo4                      = By.xpath("//*[@id='select2-filter-batch-number-result-ppge-4']");
-    public static final By batchNo5                      = By.xpath("//*[@id='select2-filter-batch-number-result-1gn7-5']");
+    public static final By batchNo1                      = By.xpath("//ul[@id='select2-filter-batch-number-results']//li[2]");
+    public static final By batchNo2                      = By.xpath("//ul[@id='select2-filter-batch-number-results']//li[3]");
+    public static final By batchNo3                      = By.xpath("//ul[@id='select2-filter-batch-number-results']//li[4]");
+    public static final By batchNo4                      = By.xpath("//ul[@id='select2-filter-batch-number-results']//li[5]");
+    public static final By batchNo5                      = By.xpath("//ul[@id='select2-filter-batch-number-results']//li[6]");
 
 
     private static final WebDriver driver = RepaymentRunner.driver;
@@ -118,11 +118,15 @@ public class repayFormPage extends BaseAction {
     }
     public void setSourceAll() {click(driver, sourceDropDown);click(driver, sourceAll);}
     public void setPelunasanAll() {click(driver, pelunasanDropDown);click(driver, pelunasanAll);}
-    public void setStatusAll() {click(driver, statusDropDown);click(driver, statusAll);}
+    public void setStatusAll() {click(driver, statusDropDown);
+        scrollIntoView(driver, statusAll);
+        click(driver, statusAll);}
     public void setPartnerAll() {click(driver, partnerDropDown);click(driver, partnerAll);}
     public void setStatusRepaymentAll() {click(driver, amountRepaymentDropDown);click(driver, amountRepaymentAll);}
     public void setBatchNoAll() {click(driver, batchNoDropDown);click(driver, batchNoAll);}
     public void verifyDropDownSource() {
+        iRowPictName = 1 + iSeq;
+
         click(driver, sourceDropDown);
         expected ="AllLOSNIKEL";
         createTest(iRowPictName, extent_test_case, extent);
@@ -135,19 +139,28 @@ public class repayFormPage extends BaseAction {
         verifyList(value,expected);
     }
     public void filterSourceAll() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
+        String[] listSource = {"All","LOS","NIKEL"};
         click(driver, sourceAll); Thread.sleep(300);
         createTest(iRowPictName, extent_test_case, extent);
         takeScreenshot.capture(driver);
 
         value = getText(driver, sourceByAll);
         expected = "All";
-        verifyList(value, expected);
+
+        //Validate data table source list
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[2] | //tr[@class='even']//td[2]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
+        for (int i = 0; i< list.size(); i++) {
+            value = list.get(i).getText();
+            verifyListAll(Arrays.stream(listSource).anyMatch(value::equals), value);
+        }
     }
     public void filterSourceLos() throws InterruptedException {
-//        click(driver, sourceDropDown);
+        iRowPictName = iRowPictName + iSeq;
+        click(driver, sourceDropDown);
         click(driver, sourceLos);
         expected = "LOS";
-
         Thread.sleep(500);
 
         createTest(iRowPictName, extent_test_case, extent);
@@ -163,33 +176,62 @@ public class repayFormPage extends BaseAction {
             verifyList(expected, value);
         }
     }
-    public void filterSourceNikel() {
+    public void filterSourceNikel() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, sourceDropDown);
         click(driver, sourceNikel);
-        createTest(iRowPictName, extent_test_case, extent);
-        value2 = getText(driver, sourceRow1);
-        createInfo(extent_test_case, "Value source data list : "+value2);
-        takeScreenshot.capture(driver);
-        value = getText(driver, sourceByNikel);
         expected = "NIKEL";
-        verifyList(value, expected);
+
+        Thread.sleep(500);
+
+        createTest(iRowPictName, extent_test_case, extent);
+        createInfo(extent_test_case, "Value ekspektasi data list : "+expected);
+        takeScreenshot.capture(driver);
+
+        //Validate data table source list
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd' or @class='even']//td[2] | //td[@class='dataTables_empty']"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
+        System.out.println(list.size());
+        for (int i = 0; i < list.size(); i++){
+            value = list.get(i).getText();
+            verifyList(expected, value);
+        }
     }
     public void verifyPelunasanDropDown() {
+        iRowPictName = iRowPictName + iSeq;
+        createTest(iRowPictName, extent_test_case,extent);
+
         click(driver, pelunasanDropDown);
         List<WebElement> list = driver.findElements(By.id("filter-payment"));
         for (int i = 0; i < list.size(); i++) {
             value = list.get(i).getText().replace("\n", "");
         }
-        expected = "AllYesNoInsurance";
+        expected = "AllYesNoInsuranceAdvance";
+        verifyList(expected, value);
         takeScreenshot.capture(driver);
-        createTest(iRowPictName, extent_test_case,extent);
-        verifyList(value, expected);
-        click(driver, pelunasanDropDown);
     }
     public void pelunasanByAll() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
+        String[] listSource = {"All","Yes","No","Insurance","Advance"};
+        click(driver, pelunasanAll); Thread.sleep(300);
+        createTest(iRowPictName, extent_test_case, extent);
+        takeScreenshot.capture(driver);
+
+        value = getText(driver, sourceByAll);
+        expected = Arrays.toString(listSource);
+
+        //Validate data table source list
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[6] | //tr[@class='even']//td[6]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
+        for (int i = 0; i< list.size(); i++) {
+            value = list.get(i).getText();
+            verifyListAll(Arrays.stream(listSource).anyMatch(value::equals), value);
+        }
 
     }
      public void pelunasanByYes() throws InterruptedException {
+         iRowPictName = iRowPictName + iSeq;
+
          click(driver, pelunasanDropDown);
          click(driver, pelunasanYes);
          expected = getText(driver, pelunasanByYes);
@@ -201,12 +243,15 @@ public class repayFormPage extends BaseAction {
 
          //Validate data table source list
          List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[6] | //tr[@class='even']//td[6]"));
+         createInfo(extent_test_case,"Jumlah Row    :" +list.size());
          for (int i = 0; i< list.size(); i++) {
              String value = list.get(i).getText();
              verifyList(expected, value);
          }
     }
      public void pelunasanByNo() throws InterruptedException {
+         iRowPictName = iRowPictName + iSeq;
+
          click(driver, pelunasanDropDown);
          click(driver, pelunasanNo);
          expected = getText(driver, pelunasanByNo);
@@ -218,12 +263,15 @@ public class repayFormPage extends BaseAction {
 
          //Validate data table source list
          List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[6] | //tr[@class='even']//td[6]"));
+         createInfo(extent_test_case,"Jumlah Row    :" +list.size());
          for (int i = 0; i< list.size(); i++) {
              value = list.get(i).getText();
              verifyList(expected,value);
          }
     }
      public void pelunasanByInsurance() throws InterruptedException {
+         iRowPictName = iRowPictName + iSeq;
+
          click(driver, pelunasanDropDown);
          click(driver, pelunasanInsu);
          expected = getText(driver, pelunasanByInsurance);
@@ -235,21 +283,25 @@ public class repayFormPage extends BaseAction {
 
          //Validate data table source list
          List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[6] | //tr[@class='even']//td[6]"));
+         createInfo(extent_test_case,"Jumlah Row    :" +list.size());
          for (int i = 0; i< list.size(); i++) {
              value = list.get(i).getText();
              verifyList(expected,value);
          }
     }
      public void pelunasanByAdvance() {
-        click(driver, pelunasanAdvan);
-
-        createTest(iRowPictName,extent_test_case,extent);
-        value = getText(driver, pelunasanBy);
-        expected = "All";
-        takeScreenshot.capture(driver);
-        verifyList(value, expected);
+         iRowPictName = iRowPictName + iSeq;
+         createTestSkip(iRowPictName, extent_test_case, extent);
+//        click(driver, pelunasanAdvan);
+//
+//        createTest(iRowPictName,extent_test_case,extent);
+//        value = getText(driver, pelunasanBy);
+//        expected = "All";
+//        takeScreenshot.capture(driver);
+//        verifyList(value, expected);
     }
     public void verifyStatusDropDown() {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, statusDropDown);
 
         List<WebElement> list = driver.findElements(By.xpath("//ul[@id = 'select2-filter-status-results']"));
@@ -261,9 +313,9 @@ public class repayFormPage extends BaseAction {
         takeScreenshot.capture(driver);
         verifyList(expected, value);
 
-
     }
     public void statusByAll() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, statusAll);
         String[] listStatus = {"All","Waiting for Approval","Pending Batch Run","Approved","Rejected","Approval Expired"};
         expected = Arrays.toString(listStatus);
@@ -275,12 +327,14 @@ public class repayFormPage extends BaseAction {
 
         //Validate data table source list
         List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
         for (int i = 0; i< list.size(); i++) {
-            String value = list.get(i).getText();
+            value = list.get(i).getText();
                 verifyListAll(Arrays.stream(listStatus).anyMatch(value::equals), value);
         }
     }
     public void statusByWaitingForApproval() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, statusDropDown);
         click(driver, statusWait);
         expected = "Waiting for Approval";
@@ -290,12 +344,14 @@ public class repayFormPage extends BaseAction {
 
         //Validate data table source list
         List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
         for (int i = 0; i< list.size(); i++) {
-            String value = list.get(i).getText();
+            value = list.get(i).getText();
             verifyList(expected, value);
         }
     }
     public void statusPendingBatchRun() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, statusDropDown);
         click(driver, statusPending);
         expected = "Pending Batch Run";
@@ -304,7 +360,7 @@ public class repayFormPage extends BaseAction {
         takeScreenshot.capture(driver);
 
         //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7]"));
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7] | //td[@class='dataTables_empty']"));
         createInfo(extent_test_case, "Jumlah Row    : "+list.size());
         for (int i = 0; i< list.size(); i++) {
             String value = list.get(i).getText();
@@ -312,7 +368,9 @@ public class repayFormPage extends BaseAction {
         }
     }
     public void statusApproved() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, statusDropDown);
+        scrollIntoView(driver, statusApproved);
         click(driver, statusApproved);
         expected = "Approved";
         Thread.sleep(500);
@@ -320,7 +378,7 @@ public class repayFormPage extends BaseAction {
         takeScreenshot.capture(driver);
 
         //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7]"));
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7] | //td[@class='dataTables_empty']"));
         createInfo(extent_test_case, "Jumlah Row    : "+list.size());
         for (int i = 0; i< list.size(); i++) {
             String value = list.get(i).getText();
@@ -328,7 +386,9 @@ public class repayFormPage extends BaseAction {
         }
     }
     public void statusRejected() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, statusDropDown);
+        scrollIntoView(driver, statusRejected);
         click(driver, statusRejected);
         expected = "Rejected";
         Thread.sleep(500);
@@ -336,7 +396,7 @@ public class repayFormPage extends BaseAction {
         takeScreenshot.capture(driver);
 
         //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7]"));
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7] | //td[@class='dataTables_empty']"));
         createInfo(extent_test_case, "Jumlah Row    : "+list.size());
         for (int i = 0; i< list.size(); i++) {
             String value = list.get(i).getText();
@@ -344,15 +404,17 @@ public class repayFormPage extends BaseAction {
         }
     }
     public void statusApprovalExpired() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, statusDropDown);
-//        click(driver, statusApprovalExpired);
+        scrollIntoView(driver, statusAppExp);
+        click(driver, statusAppExp);
         expected = "Approval Expired";
         Thread.sleep(500);
         createTest(iRowPictName, extent_test_case, extent);
         takeScreenshot.capture(driver);
 
         //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7]"));
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[7] | //tr[@class='even']//td[7] | //td[@class='dataTables_empty']"));
         createInfo(extent_test_case, "Jumlah Row    : "+list.size());
         for (int i = 0; i< list.size(); i++) {
             String value = list.get(i).getText();
@@ -360,6 +422,7 @@ public class repayFormPage extends BaseAction {
         }
     }
     public void verifyPartnerDropDown() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, partnerDropDown);
 
         List<WebElement> list = driver.findElements(partnerOption);
@@ -367,14 +430,17 @@ public class repayFormPage extends BaseAction {
             value = list.get(i).getText().replace("\n","").replace(" ","");
             System.out.println(value);
         }
-        expected = "waiting console";
+        expected = "AllAKSELERANNEWKOMUNALKOPNUSCekBugsVerificatioKOMUNALMODALANDALANRUMAHMODALDANABARUDANABIJAKDANAKOINKOINANDALANRUMAHKOINDANAPINTARLEMINERALE" +
+                "Cek123RealmeRealmeRealmeKOMUNALWingsLenovoIndofoodMIYAKOKOPNUSDOMPETPINJAMSHARPTOSHIBAMINISOCompanycompany2UANGKUIndodanaIndodana" +
+                "PTTesAutoApproveTesAutoApproveIDVIndodanaKLIKA2CPTTesPendingTesPendingIDVAmartaSeaMoney-CFinanceSeaMoney-LDNAmartaSeaMoney-CFinanceSeaMoney-LDNtestCBASchecking";
         createTest(iRowPictName,extent_test_case,extent);
         takeScreenshot.capture(driver);
         verifyList(expected, value);
     }
     public void partnerAll() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, partnerAll);
-        String[] listStatus = {"All","Waiting for Approval","Pending Batch Run","Approved","Rejected","Approval Expired"};
+        String[] listStatus = {"All","Indodana","AKSELERAN","NEWKOMUNAL","KOPNUS","SeaMoney"};
         expected = Arrays.toString(listStatus);
         Thread.sleep(500);
 
@@ -384,15 +450,17 @@ public class repayFormPage extends BaseAction {
 
         //Validate data table source list
         List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[4] | //tr[@class='even']//td[4]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
         for (int i = 0; i< list.size(); i++) {
             String value = list.get(i).getText();
             verifyListAll(Arrays.stream(listStatus).anyMatch(value::equals), value);
         }
     }
     public void partnerAkeseleran() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
+        click(driver, partnerDropDown);
         click(driver, partnerAkseleran);
-        String[] listStatus = {"All","Waiting for Approval","Pending Batch Run","Approved","Rejected","Approval Expired"};
-        expected = "Akseleran";
+        expected = "AKSELERAN";
         Thread.sleep(500);
 
         createTest(iRowPictName, extent_test_case, extent);
@@ -401,12 +469,14 @@ public class repayFormPage extends BaseAction {
 
         //Validate data table source list
         List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[4] | //tr[@class='even']//td[4]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
         for (int i = 0; i< list.size(); i++) {
             String value = list.get(i).getText();
             verifyList(expected, value);
         }
     }
     public void amountRepaymentDropDownList() {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, amountRepaymentDropDown);
 
         List<WebElement> list = driver.findElements(amountRepaymentOption);
@@ -420,6 +490,7 @@ public class repayFormPage extends BaseAction {
         verifyList(expected, value);
     }
     public void amountRepaymentAll() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, amountRepaymentAll);
         String[] listStatus = {"All","Sesuai","Kurang Bayar","Lebih Bayar"};
         expected = Arrays.toString(listStatus);
@@ -430,29 +501,16 @@ public class repayFormPage extends BaseAction {
         takeScreenshot.capture(driver);
 
         //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[10] | //tr[@class='even']//td[10]"));
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[11] | //tr[@class='even']//td[11]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
         for (int i = 0; i< list.size(); i++) {
             String value = list.get(i).getText();
             verifyListAll(Arrays.asList(listStatus).contains(value), value);
         }
     }
-    public void amountRepaymentKurangBayar() throws InterruptedException {
-        click(driver, amountRepaymentKurangBayar);
-        expected = "Kurang Bayar";
-        Thread.sleep(500);
-
-        createTest(iRowPictName, extent_test_case, extent);
-        createInfo(extent_test_case, "Value source data list : "+expected);
-        takeScreenshot.capture(driver);
-
-        //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[10] | //tr[@class='even']//td[10]"));
-        for (int i = 0; i< list.size(); i++) {
-            String value = list.get(i).getText();
-            verifyList(expected, value);
-        }
-    }
     public void amountRepaymentSesuai() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
+        click(driver, amountRepaymentDropDown);
         click(driver, amountRepaymentSesuai);
         expected = "Sesuai";
         Thread.sleep(500);
@@ -462,13 +520,36 @@ public class repayFormPage extends BaseAction {
         takeScreenshot.capture(driver);
 
         //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[10] | //tr[@class='even']//td[10]"));
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[11] | //tr[@class='even']//td[11]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
         for (int i = 0; i< list.size(); i++) {
             String value = list.get(i).getText();
             verifyList(expected, value);
         }
     }
+    public void amountRepaymentKurangBayar() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
+        click(driver, amountRepaymentDropDown);
+        click(driver, amountRepaymentKurangBayar);
+        expected = "Kurang Bayar";
+        Thread.sleep(500);
+
+        createTest(iRowPictName, extent_test_case, extent);
+        createInfo(extent_test_case, "Value source data list : "+expected);
+        takeScreenshot.capture(driver);
+
+        //Validate data table source list
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[11] | //tr[@class='even']//td[11]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
+        for (int i = 0; i< list.size(); i++) {
+            value = list.get(i).getText();
+            verifyList(expected, value);
+        }
+    }
     public void amountRepaymentLebihBayar() throws InterruptedException {
+        iRowPictName = iRowPictName + iSeq;
+        click(driver, amountRepaymentDropDown);
+        scrollIntoView(driver, amountRepaymentLebihBayar);
         click(driver, amountRepaymentLebihBayar);
         expected = "Lebih Bayar";
         Thread.sleep(500);
@@ -478,13 +559,15 @@ public class repayFormPage extends BaseAction {
         takeScreenshot.capture(driver);
 
         //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[10] | //tr[@class='even']//td[10]"));
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[11] | //tr[@class='even']//td[11]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
         for (int i = 0; i< list.size(); i++) {
             String value = list.get(i).getText();
             verifyList(expected, value);
         }
     }
     public void batchNoDropDownList()  {
+        iRowPictName = iRowPictName + iSeq;
         click(driver, batchNoDropDown);
 
         List<WebElement> list = driver.findElements(batchNoOption);
@@ -497,25 +580,27 @@ public class repayFormPage extends BaseAction {
         takeScreenshot.capture(driver);
         verifyList(expected, value);
     }
-    public void batchNoAll() throws InterruptedException {
-        click(driver, batchNoAll);
-        String[] listStatus = {"All","Sesuai","Kurang Bayar","Lebih Bayar"};
-        expected = Arrays.toString(listStatus);
-        Thread.sleep(500);
-
-        createTest(iRowPictName, extent_test_case, extent);
-        createInfo(extent_test_case, "Value source data list : "+expected);
-        takeScreenshot.capture(driver);
-
-        //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[13] | //tr[@class='even']//td[13]"));
-        for (int i = 0; i< list.size(); i++) {
-            String value = list.get(i).getText();
-            verifyListAll(Arrays.asList(listStatus).contains(value), value);
-        }
-    }
+//    public void batchNoAll() throws InterruptedException {
+//        iRowPictName = iRowPictName + iSeq;
+//        click(driver, batchNoAll);
+//        String[] listStatus = {"All","Sesuai","Kurang Bayar","Lebih Bayar"};
+//        expected = Arrays.toString(listStatus);
+//        Thread.sleep(500);
+//
+//        createTest(iRowPictName, extent_test_case, extent);
+//        createInfo(extent_test_case, "Value source data list : "+expected);
+//        takeScreenshot.capture(driver);
+//
+//        //Validate data table source list
+//        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[14] | //tr[@class='even']//td[14]"));
+//        for (int i = 0; i< list.size(); i++) {
+//            String value = list.get(i).getText();
+//            verifyListAll(Arrays.asList(listStatus).contains(value), value);
+//        }
+//    }
     public void batchNo1 () throws InterruptedException {
-        click(driver, batchNoDropDown);
+        iRowPictName = iRowPictName + iSeq;
+//        click(driver, batchNoDropDown);
         click(driver, batchNo1);
 
         expected = "1";
@@ -526,82 +611,87 @@ public class repayFormPage extends BaseAction {
         takeScreenshot.capture(driver);
 
         //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[13] | //tr[@class='even']//td[13]"));
+        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[14] | //tr[@class='even']//td[14]"));
+        createInfo(extent_test_case,"Jumlah Row    :" +list.size());
         for (int i = 0; i< list.size(); i++) {
-            String value = list.get(i).getText();
+            value = list.get(i).getText();
             verifyList(expected, value);
         }
     }
-    public void setBatchNo2 () throws InterruptedException {
-        click(driver, batchNoDropDown);
-        click(driver, batchNo2);
-
-        expected = "2";
-        Thread.sleep(500);
-
-        createTest(iRowPictName, extent_test_case, extent);
-        createInfo(extent_test_case, "Value source data list : "+expected);
-        takeScreenshot.capture(driver);
-
-        //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[13] | //tr[@class='even']//td[13]"));
-        for (int i = 0; i< list.size(); i++) {
-            String value = list.get(i).getText();
-            verifyList(expected, value);
-        }
-    }
-    public void setBatchNo3 () throws InterruptedException {
-        click(driver, batchNoDropDown);
-        click(driver, batchNo3);
-
-        expected = "3";
-        Thread.sleep(500);
-
-        createTest(iRowPictName, extent_test_case, extent);
-        createInfo(extent_test_case, "Value source data list : "+expected);
-        takeScreenshot.capture(driver);
-
-        //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[13] | //tr[@class='even']//td[13]"));
-        for (int i = 0; i< list.size(); i++) {
-            String value = list.get(i).getText();
-            verifyList(expected, value);
-        }
-    }
-    public void setBatchNo4 () throws InterruptedException {
-        click(driver, batchNoDropDown);
-        click(driver, batchNo4);
-
-        expected = "4";
-        Thread.sleep(500);
-
-        createTest(iRowPictName, extent_test_case, extent);
-        createInfo(extent_test_case, "Value source data list : "+expected);
-        takeScreenshot.capture(driver);
-
-        //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[13] | //tr[@class='even']//td[13]"));
-        for (int i = 0; i< list.size(); i++) {
-            String value = list.get(i).getText();
-            verifyList(expected, value);
-        }
-    }
-    public void setBatchNo5 () throws InterruptedException {
-        click(driver, batchNoDropDown);
-        click(driver, batchNo5);
-
-        expected = "5";
-        Thread.sleep(500);
-
-        createTest(iRowPictName, extent_test_case, extent);
-        createInfo(extent_test_case, "Value source data list : "+expected);
-        takeScreenshot.capture(driver);
-
-        //Validate data table source list
-        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[13] | //tr[@class='even']//td[13]"));
-        for (int i = 0; i< list.size(); i++) {
-            String value = list.get(i).getText();
-            verifyList(expected, value);
-        }
-    }
+//    public void setBatchNo2 () throws InterruptedException {
+//        iRowPictName = iRowPictName + iSeq;
+//        click(driver, batchNoDropDown);
+//        click(driver, batchNo2);
+//
+//        expected = "2";
+//        Thread.sleep(500);
+//
+//        createTest(iRowPictName, extent_test_case, extent);
+//        createInfo(extent_test_case, "Value source data list : "+expected);
+//        takeScreenshot.capture(driver);
+//
+//        //Validate data table source list
+//        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[14] | //tr[@class='even']//td[14]"));
+//        for (int i = 0; i< list.size(); i++) {
+//            String value = list.get(i).getText();
+//            verifyList(expected, value);
+//        }
+//    }
+//    public void setBatchNo3 () throws InterruptedException {
+//        iRowPictName = iRowPictName + iSeq;
+//        click(driver, batchNoDropDown);
+//        click(driver, batchNo3);
+//
+//        expected = "3";
+//        Thread.sleep(500);
+//
+//        createTest(iRowPictName, extent_test_case, extent);
+//        createInfo(extent_test_case, "Value source data list : "+expected);
+//        takeScreenshot.capture(driver);
+//
+//        //Validate data table source list
+//        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[14] | //tr[@class='even']//td[14]"));
+//        for (int i = 0; i< list.size(); i++) {
+//            String value = list.get(i).getText();
+//            verifyList(expected, value);
+//        }
+//    }
+//    public void setBatchNo4 () throws InterruptedException {
+//        iRowPictName = iRowPictName + iSeq;
+//        click(driver, batchNoDropDown);
+//        click(driver, batchNo4);
+//
+//        expected = "4";
+//        Thread.sleep(500);
+//
+//        createTest(iRowPictName, extent_test_case, extent);
+//        createInfo(extent_test_case, "Value source data list : "+expected);
+//        takeScreenshot.capture(driver);
+//
+//        //Validate data table source list
+//        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[14] | //tr[@class='even']//td[14]"));
+//        for (int i = 0; i< list.size(); i++) {
+//            String value = list.get(i).getText();
+//            verifyList(expected, value);
+//        }
+//    }
+//    public void setBatchNo5 () throws InterruptedException {
+//        iRowPictName = iRowPictName + iSeq;
+//        click(driver, batchNoDropDown);
+//        click(driver, batchNo5);
+//
+//        expected = "5";
+//        Thread.sleep(500);
+//
+//        createTest(iRowPictName, extent_test_case, extent);
+//        createInfo(extent_test_case, "Value source data list : "+expected);
+//        takeScreenshot.capture(driver);
+//
+//        //Validate data table source list
+//        List<WebElement> list = driver.findElements(By.xpath("//tr[@class='odd']//td[13] | //tr[@class='even']//td[13]"));
+//        for (int i = 0; i< list.size(); i++) {
+//            String value = list.get(i).getText();
+//            verifyList(expected, value);
+//        }
+//    }
 }

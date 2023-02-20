@@ -25,8 +25,8 @@ public class StepRepaymentForm {
     }
 
      @Then("View data dengan filter Source All")
-    public void view_data_dengan_filter_Source_All() {
-       
+    public void view_data_dengan_filter_Source_All() throws InterruptedException {
+       rp.filterSourceAll();
     }
 
      @And("View data dengan filter Source LOS")
@@ -35,8 +35,8 @@ public class StepRepaymentForm {
     }
 
      @And("View data dengan filter Source NIKEL")
-    public void view_data_dengan_filter_Source_NIKEL() {
-
+    public void view_data_dengan_filter_Source_NIKEL() throws InterruptedException {
+        rp.filterSourceNikel();
         rp.setSourceAll();
     }
 
@@ -46,8 +46,8 @@ public class StepRepaymentForm {
     }
 
      @And("View data dengan filter Pelunasan All")
-    public void view_data_dengan_filter_Pelunasan_All() {
-       
+    public void view_data_dengan_filter_Pelunasan_All() throws InterruptedException {
+       rp.pelunasanByAll();
     }
 
      @And("View data dengan filter Pelunasan Yes")
@@ -67,7 +67,7 @@ public class StepRepaymentForm {
 
      @And("View data dengan filter Pelunasan Advance")
     public void view_data_dengan_filter_Pelunasan_Advance() {
-
+        rp.pelunasanByAdvance();
         rp.setPelunasanAll();
     }
 
@@ -87,23 +87,23 @@ public class StepRepaymentForm {
     }
 
      @And("View data dengan filter Status_Pending Batch Run")
-    public void view_data_dengan_filter_Status_Pending_Batch_Run() {
-       
+    public void view_data_dengan_filter_Status_Pending_Batch_Run() throws InterruptedException {
+       rp.statusPendingBatchRun();
     }
 
      @And("View data dengan filter Status_Approved")
-    public void view_data_dengan_filter_Status_Approved() {
-       
+    public void view_data_dengan_filter_Status_Approved() throws InterruptedException {
+       rp.statusApproved();
     }
 
      @And("View data dengan filter Status_Rejected")
-    public void view_data_dengan_filter_Status_Rejected() {
-       
+    public void view_data_dengan_filter_Status_Rejected() throws InterruptedException {
+       rp.statusRejected();
     }
 
      @And("View data dengan filter Status_Approval Expired")
-    public void view_data_dengan_filter_Status_Approval_Expired() {
-
+    public void view_data_dengan_filter_Status_Approval_Expired() throws InterruptedException {
+        rp.statusApprovalExpired();
         rp.setStatusAll();
     }
 

@@ -65,7 +65,7 @@ public class RepaymentRunner extends AbstractTestNGCucumberTests{
 //                RenameFilePengurus renameFilePengurus  = new RenameFilePengurus();
 //                moveFileScenario.dltDataFileExist();
 //                moveFileScenario.dltDataFileDiffPartnerExist();
-//                dataFile.dataFile(Const.appFile, Const.reaFile, "10");
+//                dataFile.dataFile(Const.appFile, Const.reaFile, " 10");
 //                dataDiff.dataFile(Const.appFile, Const.reaFile);
 //                renameFilePengurus.updateFileName();
 

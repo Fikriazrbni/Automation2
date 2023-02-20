@@ -93,7 +93,7 @@ public class GeneratorPengurus {
         return npwp.toString();
     }
     public String namaPengurus(int Length) {
-        String name = "Yohana Angelina Ivana Firdaus Muhammad Sulaiman Abdan Usamah Andika Yosang Saputra";
+        String name = "Cemplunk Hardiansyah Panca Mahendra Dimas Tampubolon Pangestu Dabukke Kayun Prasasta Wadi Winarno";
         String sbName = name.substring(0,Length);
         return sbName;
 

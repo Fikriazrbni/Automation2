@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9d43069-f9ef-4b53-833f-6ba42f4e38db" name="Changes" comment="" />
+    <list default="true" id="e9d43069-f9ef-4b53-833f-6ba42f4e38db" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileValidation/Badan Usaha - Positif.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fileValidation/Badan Usaha - Positif.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/badanUsaha/LibUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/badanUsaha/LibUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/definitions/StepRepaymentForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/definitions/StepRepaymentForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/elementsPage/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/elementsPage/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/elementsPage/repayFormPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/elementsPage/repayFormPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gueNyobaCreateCSV/GeneratorPengurus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gueNyobaCreateCSV/GeneratorPengurus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runner/RepaymentRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/RepaymentRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testData/ReadTestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testData/ReadTestData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-report/cucumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-report/cucumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/definitions/StepRepaymentForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/definitions/StepRepaymentForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/elementsPage/repayFormPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/elementsPage/repayFormPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/AT-Report_Chanelling_BadanUsaha_173554.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173612.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173615.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173618.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173622.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173625.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173628.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173631.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173634.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173637.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/Selenix-Spark/realizationForm170220/17022023-173643.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testData.xlsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +43,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HierarchyBrowserManager">
     <option name="SORT_ALPHABETICALLY" value="true" />
   </component>
@@ -28,17 +57,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/fikri^rabbani/Documents/LOS/Badan Usaha/atchbu",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fikri^rabbani/Documents/LOS/Badan Usaha/atchbu&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\project\atchbu\src\test\java\badanUsaha" />
@@ -172,6 +201,17 @@
       <updated>1671248667570</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -168,7 +168,6 @@ public class LibUtils {
         }
     }
     public static boolean verifyList(String expected, String actual) {
-
         try {
             Assert.assertEquals(expected, actual);
             capture.log(Status.PASS, MarkupHelper.createUnorderedList(Arrays.asList("Data Expected __________ : " + expected, "Actual from UI : " + actual)).getMarkup());
@@ -184,14 +183,13 @@ public class LibUtils {
 
     }
     public static boolean verifyListAll(Boolean hasil, String actual) {
-
         try {
             Assert.assertTrue(hasil, actual);
-            capture.log(Status.FAIL, MarkupHelper.createUnorderedList(Arrays.asList("komparasi list dengan DropDown __________ : " + hasil, "Actual from UI : " + actual)).getMarkup());
+            capture.log(Status.PASS, MarkupHelper.createUnorderedList(Arrays.asList("Verify list data __________ : " + hasil, "Actual from UI : " + actual)).getMarkup());
             System.out.println("AssertTrue >>>>>>>>>> Expected : [" + hasil + "]  -  " + "Actual : [" + actual + "]");
             return true;
         } catch (AssertionError ee) {
-            capture.log(Status.FAIL, MarkupHelper.createUnorderedList(Arrays.asList("komparasi list dengan DropDown __________ : " + hasil, "Actual from UI : " + actual)).getMarkup());
+            capture.log(Status.FAIL, MarkupHelper.createUnorderedList(Arrays.asList("Verify list data __________ : " + hasil, "Actual from UI : " + actual)).getMarkup());
             System.out.println("AssertFalse >>>>>>>>> Expected : [" + hasil + "]  -  " + "Actual : [" + actual + "]");
             return false;
         }

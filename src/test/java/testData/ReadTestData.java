@@ -71,6 +71,9 @@ public class ReadTestData {
                 case "validationRealizationFile":
                     sheet = workbook.getSheet(Const.sheetRealisasiFileBU);
                     break;
+                case "repaymentForm":
+                    sheet = workbook.getSheet(Const.sheetRepayment);
+                    break;
             }
             _case = sheet.getRow(i + 1).getCell(1).getStringCellValue();
 
@@ -102,6 +105,9 @@ public class ReadTestData {
                     break;
                 case "validationRealizationFile":
                     sheet = workbook.getSheet(Const.sheetRealisasiFileBU);
+                    break;
+                case "repaymentForm":
+                    sheet = workbook.getSheet(Const.sheetRepayment);
                     break;
             }
             _case = sheet.getRow(i + 1).getCell(4).getStringCellValue();
@@ -135,6 +141,9 @@ public class ReadTestData {
                 case "validationRealizationFile":
                     sheet = workbook.getSheet(Const.sheetRealisasiFileBU);
                     break;
+                case "repaymentForm":
+                    sheet = workbook.getSheet(Const.sheetRepayment);
+                    break;
             }
 
             _expectedResult = sheet.getRow(i + 1).getCell(5).getStringCellValue();
@@ -165,6 +174,9 @@ public class ReadTestData {
                     break;
                 case "validationRealizationFile":
                     sheet = workbook.getSheet(Const.sheetRealisasiFileBU);
+                    break;
+                case "repaymentForm":
+                    sheet = workbook.getSheet(Const.sheetRepayment);
                     break;
             }
 

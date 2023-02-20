@@ -96,6 +96,7 @@ public class Const {
     public static final String sheetRealizationFormBU = "TC - Realization Badan Usaha";
     public static final String sheetApprovalFileBU = "TC - Validasi File Badan Usaha";
     public static final String sheetRealisasiFileBU = "TC - Validate File Badan Usaha";
+    public static final String sheetRepayment = "TC - Repayment Form";
     //common
     public static final int delay = 1500;
     public static final int seconds = 30;

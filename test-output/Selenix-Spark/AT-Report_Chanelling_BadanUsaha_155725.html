@@ -1,0 +1,3689 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Badan Usaha : OtoCORP</title>
+<link rel="apple-touch-icon" href="spark/logo.png">
+<link rel="shortcut icon" href="spark/logo.png">
+<link rel="stylesheet" href="spark/spark-style.css">
+<link rel="stylesheet" href="spark/font-awesome.min.css">
+<script src="spark/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('spark/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Extent Report Channeling</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Feb 20, 2023 03:57:27 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('author-view')">
+<a id="nav-author" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-user"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Feb 20, 2023 03:57:27 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Feb 20, 2023 03:59:08 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>21</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>5</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='77%'>
+<b>21</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='18%'><b>5</b> tests failed,
+<b>1</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='61%'><b>186</b> events passed</small></div>
+<div>
+<small data-tooltip='1%'><b>5</b> events failed,
+<b data-tooltip='%'>113</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"TC_RepayForm_01 : Verifikasi isi filter Source":3.128,"TC_RepayForm_02 : View data dengan filter Source : All":2.543,"TC_RepayForm_03 : View data dengan filter Source : LOS":2.399,"TC_RepayForm_04 : View data dengan filter Source : NIKEL":2.056,"TC_RepayForm_05 : Verifikasi isi filter Pelunasan":2.281,"TC_RepayForm_06 : View data dengan filter Pelunasan : All":2.452,"TC_RepayForm_07 : View data dengan filter Pelunasan : Yes":2.18,"TC_RepayForm_08 : View data dengan filter Pelunasan : No":2.188,"TC_RepayForm_09 : View data dengan filter Pelunasan : Insurance":2.072,"TC_RepayForm_10 : View data dengan filter Pelunasan : Advance":0.262,"TC_RepayForm_11 : Verifikasi isi filter Status":2.01,"TC_RepayForm_12 : View data dengan filter Status : All":2.274,"TC_RepayForm_13 : View data dengan filter Status : Waiting for approval":2.226,"TC_RepayForm_14 : View data dengan filter Status : Pending Batch Run":1.943,"TC_RepayForm_15 : View data dengan filter Status : Approved":2.012,"TC_RepayForm_16 : View data dengan filter Status : Rejected":1.992,"TC_RepayForm_17 : View data dengan filter Status : Approval Expired":1.991,"TC_RepayForm_18 : Verifikasi isi filter Partner":1.994,"TC_RepayForm_19 : View data dengan filter Partner : All":2.328,"TC_RepayForm_20 : View data dengan filter Partner : pilih salah satu":2.094,"TC_RepayForm_21 : Verifikasi isi filter Status Amount Repayment":1.999,"TC_RepayForm_22 : View data dengan filter Status Amount Repayment : All":2.294,"TC_RepayForm_23 : View data dengan filter Status Amount Repayment : Sesuai":2.077,"TC_RepayForm_24 : View data dengan filter Status Amount Repayment : Kurang Bayar":2.141,"TC_RepayForm_25 : View data dengan filter Status Amount Repayment : Lebih Bayar":2.068,"TC_RepayForm_26 : Verifikasi isi filter Status Batch No":1.973,"TC_RepayForm_27 : View data dengan filter Batch No : pilih salah satu":2.148
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 author-container">
+<div class="card">
+<div class="card-header"><p>Author</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead>
+<tbody>
+<tr>
+<td>fikri^rabbani</td>
+<td>21</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>77.778%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>Regression</td>
+<td>21</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>77.778%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 21,
+failParent: 5,
+warningParent: 0,
+skipParent: 1,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 186,
+failEvents: 5,
+warningEvents: 0,
+skipEvents: 1,
+infoEvents: 112
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+<ul id="author-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">fikri^rabbani</a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">Regression</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="5"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_01 : Verifikasi isi filter Source</p>
+            <p class="text-sm">
+              <span>3:57:44 PM</span> / <span>00:00:03:128</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_01 : Verifikasi isi filter Source</h5>
+<span class='badge badge-success'>02.20.2023 3:57:44 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:57:47 PM</span>
+<span class='badge badge-default'>00:00:03:128</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:45 PM</td>
+        <td>
+          Expected Result from Excel : Filter Source berisi option :
+1. All
+2. LOS
+3. NIKEL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:45 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:47 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155745.png' src="repaymentForm200220/20022023-155745.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AllLOSNIKEL</li><li>Actual from UI : AllLOSNIKEL</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_02 : View data dengan filter Source : All</p>
+            <p class="text-sm">
+              <span>3:57:48 PM</span> / <span>00:00:02:543</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_02 : View data dengan filter Source : All</h5>
+<span class='badge badge-success'>02.20.2023 3:57:48 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:57:51 PM</span>
+<span class='badge badge-default'>00:00:02:543</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:48 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk semua source
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:49 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:50 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155749.png' src="repaymentForm200220/20022023-155749.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:50 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :18</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:50 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:50 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:51 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_03 : View data dengan filter Source : LOS</p>
+            <p class="text-sm">
+              <span>3:57:52 PM</span> / <span>00:00:02:399</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_03 : View data dengan filter Source : LOS</h5>
+<span class='badge badge-success'>02.20.2023 3:57:52 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:57:54 PM</span>
+<span class='badge badge-default'>00:00:02:399</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:52 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil dengan source LOS
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:52 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:52 PM</td>
+        <td>
+          <ul><li>Message : Value ekspektasi data list : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155752.png' src="repaymentForm200220/20022023-155752.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :18</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:54 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : LOS</li><li>Actual from UI : LOS</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="11"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_04 : View data dengan filter Source : NIKEL</p>
+            <p class="text-sm">
+              <span>3:57:55 PM</span> / <span>00:00:02:056</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TC_RepayForm_04 : View data dengan filter Source : NIKEL</h5>
+<span class='badge badge-success'>02.20.2023 3:57:55 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:57:57 PM</span>
+<span class='badge badge-default'>00:00:02:056</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:55 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil dengan source NIKEL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:56 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:56 PM</td>
+        <td>
+          <ul><li>Message : Value ekspektasi data list : NIKEL</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:57 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155756.png' src="repaymentForm200220/20022023-155756.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:57 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:57:57 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : NIKEL</li><li>Actual from UI : No data available in table</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_05 : Verifikasi isi filter Pelunasan</p>
+            <p class="text-sm">
+              <span>3:57:58 PM</span> / <span>00:00:02:281</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_05 : Verifikasi isi filter Pelunasan</h5>
+<span class='badge badge-success'>02.20.2023 3:57:58 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:00 PM</span>
+<span class='badge badge-default'>00:00:02:281</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:58 PM</td>
+        <td>
+          Expected Result from Excel : Filter Pelunasan berisi option :
+1. All
+2. Yes
+3. No
+4. Insurance
+5. Advance
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:57:58 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:57:59 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AllYesNoInsuranceAdvance</li><li>Actual from UI : AllYesNoInsuranceAdvance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:00 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155759.png' src="repaymentForm200220/20022023-155759.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_06 : View data dengan filter Pelunasan : All</p>
+            <p class="text-sm">
+              <span>3:58:01 PM</span> / <span>00:00:02:452</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_06 : View data dengan filter Pelunasan : All</h5>
+<span class='badge badge-success'>02.20.2023 3:58:01 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:03 PM</span>
+<span class='badge badge-default'>00:00:02:452</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:01 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk semua jenis pelunasan
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:01 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155801.png' src="repaymentForm200220/20022023-155801.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :18</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:03 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_07 : View data dengan filter Pelunasan : Yes</p>
+            <p class="text-sm">
+              <span>3:58:04 PM</span> / <span>00:00:02:180</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_07 : View data dengan filter Pelunasan : Yes</h5>
+<span class='badge badge-success'>02.20.2023 3:58:04 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:07 PM</span>
+<span class='badge badge-default'>00:00:02:180</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:05 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis pelunasan : Yes
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:05 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:05 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:07 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155805.png' src="repaymentForm200220/20022023-155805.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:07 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :6</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:07 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Yes</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:07 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Yes</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:07 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Yes</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:07 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Yes</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:07 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Yes</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:07 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Yes</li><li>Actual from UI : Yes</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_08 : View data dengan filter Pelunasan : No</p>
+            <p class="text-sm">
+              <span>3:58:08 PM</span> / <span>00:00:02:188</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_08 : View data dengan filter Pelunasan : No</h5>
+<span class='badge badge-success'>02.20.2023 3:58:08 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:10 PM</span>
+<span class='badge badge-default'>00:00:02:188</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:08 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis pelunasan : No
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:08 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:08 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:10 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155808.png' src="repaymentForm200220/20022023-155808.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:10 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :6</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:10 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : No</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:10 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : No</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:10 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : No</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:10 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : No</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:10 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : No</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:10 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : No</li><li>Actual from UI : No</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_09 : View data dengan filter Pelunasan : Insurance</p>
+            <p class="text-sm">
+              <span>3:58:11 PM</span> / <span>00:00:02:072</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_09 : View data dengan filter Pelunasan : Insurance</h5>
+<span class='badge badge-success'>02.20.2023 3:58:11 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:13 PM</span>
+<span class='badge badge-default'>00:00:02:072</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:11 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis pelunasan : Insurance
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:11 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:11 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:13 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155811.png' src="repaymentForm200220/20022023-155811.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:13 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :6</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:13 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Insurance</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:13 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Insurance</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:13 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Insurance</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:13 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Insurance</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:13 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Insurance</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:13 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Insurance</li><li>Actual from UI : Insurance</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="23"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_10 : View data dengan filter Pelunasan : Advance</p>
+            <p class="text-sm">
+              <span>3:58:13 PM</span> / <span>00:00:00:262</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">TC_RepayForm_10 : View data dengan filter Pelunasan : Advance</h5>
+<span class='badge badge-success'>02.20.2023 3:58:13 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:14 PM</span>
+<span class='badge badge-default'>00:00:00:262</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:13 PM</td>
+        <td>
+          Expected Result from CSV : Data repayment tampil untuk jenis pelunasan : Advance
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>3:58:14 PM</td>
+        <td>
+          Expected Result from UI : 
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_11 : Verifikasi isi filter Status</p>
+            <p class="text-sm">
+              <span>3:58:14 PM</span> / <span>00:00:02:010</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_11 : Verifikasi isi filter Status</h5>
+<span class='badge badge-success'>02.20.2023 3:58:14 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:16 PM</span>
+<span class='badge badge-default'>00:00:02:010</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:14 PM</td>
+        <td>
+          Expected Result from Excel : Filter Status berisi option :
+1. All
+2. Waiting for approval
+3. Pending Batch Run
+4. Approved
+5. Rejected
+6. Approval Expired
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:14 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:16 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155814.png' src="repaymentForm200220/20022023-155814.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:16 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AllWaiting for approvalPending Batch RunApprovedRejectedApproval Expired</li><li>Actual from UI : AllWaiting for approvalPending Batch RunApprovedRejectedApproval Expired</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_12 : View data dengan filter Status : All</p>
+            <p class="text-sm">
+              <span>3:58:17 PM</span> / <span>00:00:02:274</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_12 : View data dengan filter Status : All</h5>
+<span class='badge badge-success'>02.20.2023 3:58:17 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:19 PM</span>
+<span class='badge badge-default'>00:00:02:274</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:17 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk semua jenis status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:17 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:17 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : [All, Waiting for Approval, Pending Batch Run, Approved, Rejected, Approval Expired]</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155817.png' src="repaymentForm200220/20022023-155817.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :18</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:19 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="29"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_13 : View data dengan filter Status : Waiting for approval</p>
+            <p class="text-sm">
+              <span>3:58:20 PM</span> / <span>00:00:02:226</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_13 : View data dengan filter Status : Waiting for approval</h5>
+<span class='badge badge-success'>02.20.2023 3:58:20 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:22 PM</span>
+<span class='badge badge-default'>00:00:02:226</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:20 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis status : Waiting for approval
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:20 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155820.png' src="repaymentForm200220/20022023-155820.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :18</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:22 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Waiting for Approval</li><li>Actual from UI : Waiting for Approval</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="31"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_14 : View data dengan filter Status : Pending Batch Run</p>
+            <p class="text-sm">
+              <span>3:58:23 PM</span> / <span>00:00:01:943</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TC_RepayForm_14 : View data dengan filter Status : Pending Batch Run</h5>
+<span class='badge badge-success'>02.20.2023 3:58:23 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:25 PM</span>
+<span class='badge badge-default'>00:00:01:943</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:23 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis status : Pending Batch Run
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:24 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:25 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155824.png' src="repaymentForm200220/20022023-155824.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:25 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:58:25 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Pending Batch Run</li><li>Actual from UI : No data available in table</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="33"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_15 : View data dengan filter Status : Approved</p>
+            <p class="text-sm">
+              <span>3:58:27 PM</span> / <span>00:00:02:012</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TC_RepayForm_15 : View data dengan filter Status : Approved</h5>
+<span class='badge badge-success'>02.20.2023 3:58:27 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:29 PM</span>
+<span class='badge badge-default'>00:00:02:012</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:27 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis status : Approved
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:27 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:29 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155827.png' src="repaymentForm200220/20022023-155827.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:29 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:58:29 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Approved</li><li>Actual from UI : No data available in table</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="35"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_16 : View data dengan filter Status : Rejected</p>
+            <p class="text-sm">
+              <span>3:58:31 PM</span> / <span>00:00:01:992</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TC_RepayForm_16 : View data dengan filter Status : Rejected</h5>
+<span class='badge badge-success'>02.20.2023 3:58:31 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:33 PM</span>
+<span class='badge badge-default'>00:00:01:992</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:31 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis status : Rejected
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:31 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:33 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155831.png' src="repaymentForm200220/20022023-155831.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:33 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:58:33 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Rejected</li><li>Actual from UI : No data available in table</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="37"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_17 : View data dengan filter Status : Approval Expired</p>
+            <p class="text-sm">
+              <span>3:58:35 PM</span> / <span>00:00:01:991</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">TC_RepayForm_17 : View data dengan filter Status : Approval Expired</h5>
+<span class='badge badge-success'>02.20.2023 3:58:35 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:37 PM</span>
+<span class='badge badge-default'>00:00:01:991</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=37</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:35 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis status : Approval Expired
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:35 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:37 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155835.png' src="repaymentForm200220/20022023-155835.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:37 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:58:37 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Approval Expired</li><li>Actual from UI : No data available in table</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="39"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_18 : Verifikasi isi filter Partner</p>
+            <p class="text-sm">
+              <span>3:58:39 PM</span> / <span>00:00:01:994</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_18 : Verifikasi isi filter Partner</h5>
+<span class='badge badge-success'>02.20.2023 3:58:39 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:41 PM</span>
+<span class='badge badge-default'>00:00:01:994</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:39 PM</td>
+        <td>
+          Expected Result from Excel : Filter Partner berisi option All dan list partner
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:39 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:41 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155839.png' src="repaymentForm200220/20022023-155839.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:41 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AllAKSELERANNEWKOMUNALKOPNUSCekBugsVerificatioKOMUNALMODALANDALANRUMAHMODALDANABARUDANABIJAKDANAKOINKOINANDALANRUMAHKOINDANAPINTARLEMINERALECek123RealmeRealmeRealmeKOMUNALWingsLenovoIndofoodMIYAKOKOPNUSDOMPETPINJAMSHARPTOSHIBAMINISOCompanycompany2UANGKUIndodanaIndodanaPTTesAutoApproveTesAutoApproveIDVIndodanaKLIKA2CPTTesPendingTesPendingIDVAmartaSeaMoney-CFinanceSeaMoney-LDNAmartaSeaMoney-CFinanceSeaMoney-LDNtestCBASchecking</li><li>Actual from UI : AllAKSELERANNEWKOMUNALKOPNUSCekBugsVerificatioKOMUNALMODALANDALANRUMAHMODALDANABARUDANABIJAKDANAKOINKOINANDALANRUMAHKOINDANAPINTARLEMINERALECek123RealmeRealmeRealmeKOMUNALWingsLenovoIndofoodMIYAKOKOPNUSDOMPETPINJAMSHARPTOSHIBAMINISOCompanycompany2UANGKUIndodanaIndodanaPTTesAutoApproveTesAutoApproveIDVIndodanaKLIKA2CPTTesPendingTesPendingIDVAmartaSeaMoney-CFinanceSeaMoney-LDNAmartaSeaMoney-CFinanceSeaMoney-LDNtestCBASchecking</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="41"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_19 : View data dengan filter Partner : All</p>
+            <p class="text-sm">
+              <span>3:58:41 PM</span> / <span>00:00:02:328</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_19 : View data dengan filter Partner : All</h5>
+<span class='badge badge-success'>02.20.2023 3:58:41 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:44 PM</span>
+<span class='badge badge-default'>00:00:02:328</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=41</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:41 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk semua jenis partner
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:42 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:42 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : [All, Indodana, AKSELERAN, NEWKOMUNAL, KOPNUS, SeaMoney]</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155842.png' src="repaymentForm200220/20022023-155842.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :18</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:43 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Indodana</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Indodana</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Indodana</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Indodana</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Indodana</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Indodana</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Indodana</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Indodana</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:44 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Indodana</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="43"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_20 : View data dengan filter Partner : pilih salah satu</p>
+            <p class="text-sm">
+              <span>3:58:45 PM</span> / <span>00:00:02:094</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_20 : View data dengan filter Partner : pilih salah satu</h5>
+<span class='badge badge-success'>02.20.2023 3:58:45 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:47 PM</span>
+<span class='badge badge-default'>00:00:02:094</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=43</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:45 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk partner yang dipilih
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:45 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:45 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155845.png' src="repaymentForm200220/20022023-155845.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :9</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AKSELERAN</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AKSELERAN</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AKSELERAN</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AKSELERAN</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AKSELERAN</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AKSELERAN</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AKSELERAN</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AKSELERAN</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AKSELERAN</li><li>Actual from UI : AKSELERAN</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="45"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_21 : Verifikasi isi filter Status Amount Repayment</p>
+            <p class="text-sm">
+              <span>3:58:47 PM</span> / <span>00:00:01:999</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_21 : Verifikasi isi filter Status Amount Repayment</h5>
+<span class='badge badge-success'>02.20.2023 3:58:47 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:49 PM</span>
+<span class='badge badge-default'>00:00:01:999</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=45</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:47 PM</td>
+        <td>
+          Expected Result from Excel : Filter Status Amount Repayment berisi option :
+1. All
+2. Sesuai
+3. Kurang Bayar
+4. Lebih Bayar
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:48 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:49 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155848.png' src="repaymentForm200220/20022023-155848.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:49 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : AllSesuaiKurangBayarLebihBayar</li><li>Actual from UI : AllSesuaiKurangBayarLebihBayar</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="47"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_22 : View data dengan filter Status Amount Repayment : All</p>
+            <p class="text-sm">
+              <span>3:58:50 PM</span> / <span>00:00:02:294</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_22 : View data dengan filter Status Amount Repayment : All</h5>
+<span class='badge badge-success'>02.20.2023 3:58:50 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:52 PM</span>
+<span class='badge badge-default'>00:00:02:294</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=47</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:50 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk semua jenis status amount repayment
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:50 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:50 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : [All, Sesuai, Kurang Bayar, Lebih Bayar]</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155850.png' src="repaymentForm200220/20022023-155850.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :18</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:52 PM</td>
+        <td>
+          <ul><li>Verify list data __________ : true</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="49"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_23 : View data dengan filter Status Amount Repayment : Sesuai</p>
+            <p class="text-sm">
+              <span>3:58:53 PM</span> / <span>00:00:02:077</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_23 : View data dengan filter Status Amount Repayment : Sesuai</h5>
+<span class='badge badge-success'>02.20.2023 3:58:53 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:55 PM</span>
+<span class='badge badge-default'>00:00:02:077</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=49</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:53 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis status amount repayment : Sesuai
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:54 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:54 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:55 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155854.png' src="repaymentForm200220/20022023-155854.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:55 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :5</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:55 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Sesuai</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:55 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Sesuai</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:55 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Sesuai</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:55 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Sesuai</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:55 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Sesuai</li><li>Actual from UI : Sesuai</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="51"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_24 : View data dengan filter Status Amount Repayment : Kurang Bayar</p>
+            <p class="text-sm">
+              <span>3:58:56 PM</span> / <span>00:00:02:141</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_24 : View data dengan filter Status Amount Repayment : Kurang Bayar</h5>
+<span class='badge badge-success'>02.20.2023 3:58:56 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:58:58 PM</span>
+<span class='badge badge-default'>00:00:02:141</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=51</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:56 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis status amount repayment : Kurang Bayar
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:57 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:57 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155857.png' src="repaymentForm200220/20022023-155857.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :8</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Kurang Bayar</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Kurang Bayar</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Kurang Bayar</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Kurang Bayar</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Kurang Bayar</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Kurang Bayar</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Kurang Bayar</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:58:58 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Kurang Bayar</li><li>Actual from UI : Kurang Bayar</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="53"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_25 : View data dengan filter Status Amount Repayment : Lebih Bayar</p>
+            <p class="text-sm">
+              <span>3:59:00 PM</span> / <span>00:00:02:068</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_25 : View data dengan filter Status Amount Repayment : Lebih Bayar</h5>
+<span class='badge badge-success'>02.20.2023 3:59:00 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:59:02 PM</span>
+<span class='badge badge-default'>00:00:02:068</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=53</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:00 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk jenis status amount repayment : Lebih Bayar
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:01 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:01 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:02 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155901.png' src="repaymentForm200220/20022023-155901.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:02 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :5</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:02 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Lebih Bayar</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:02 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Lebih Bayar</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:02 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Lebih Bayar</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:02 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Lebih Bayar</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:02 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : Lebih Bayar</li><li>Actual from UI : Lebih Bayar</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="55"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_26 : Verifikasi isi filter Status Batch No</p>
+            <p class="text-sm">
+              <span>3:59:03 PM</span> / <span>00:00:01:973</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_26 : Verifikasi isi filter Status Batch No</h5>
+<span class='badge badge-success'>02.20.2023 3:59:03 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:59:05 PM</span>
+<span class='badge badge-default'>00:00:01:973</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=55</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:03 PM</td>
+        <td>
+          Expected Result from Excel : Filter Batch No berisi option All dan no batch
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:03 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:05 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155903.png' src="repaymentForm200220/20022023-155903.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:05 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : All12345678910</li><li>Actual from UI : All12345678910</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="57"
+          author="fikri^rabbani"
+          tag="Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">TC_RepayForm_27 : View data dengan filter Batch No : pilih salah satu</p>
+            <p class="text-sm">
+              <span>3:59:06 PM</span> / <span>00:00:02:148</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">TC_RepayForm_27 : View data dengan filter Batch No : pilih salah satu</h5>
+<span class='badge badge-success'>02.20.2023 3:59:06 PM</span>
+<span class='badge badge-danger'>02.20.2023 3:59:08 PM</span>
+<span class='badge badge-default'>00:00:02:148</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=57</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">fikri^rabbani</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:06 PM</td>
+        <td>
+          Expected Result from Excel : Data repayment tampil untuk batch no yang dipilih
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:06 PM</td>
+        <td>
+          Actual Result from UI : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:06 PM</td>
+        <td>
+          <ul><li>Message : Value source data list : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='repaymentForm200220/20022023-155906.png' src="repaymentForm200220/20022023-155906.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Message : Jumlah Row    :9</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : 1</li><li>Actual from UI : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : 1</li><li>Actual from UI : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : 1</li><li>Actual from UI : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : 1</li><li>Actual from UI : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : 1</li><li>Actual from UI : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : 1</li><li>Actual from UI : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : 1</li><li>Actual from UI : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : 1</li><li>Actual from UI : 1</li></ul>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:59:08 PM</td>
+        <td>
+          <ul><li>Data Expected __________ : 1</li><li>Actual from UI : 1</li></ul>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view author-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Author</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>21</span>
+<span class='badge log badge-danger'>5</span>
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">fikri^rabbani</p>
+<p class="duration text-sm">27 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>fikri^rabbani</h4>
+<span status="pass" class='badge log pass-bg'>21 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:57:44 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>TC_RepayForm_01 : Verifikasi isi filter Source</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:57:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>TC_RepayForm_02 : View data dengan filter Source : All</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:57:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>TC_RepayForm_03 : View data dengan filter Source : LOS</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:57:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>TC_RepayForm_04 : View data dengan filter Source : NIKEL</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:57:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>TC_RepayForm_05 : Verifikasi isi filter Pelunasan</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>TC_RepayForm_06 : View data dengan filter Pelunasan : All</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>TC_RepayForm_07 : View data dengan filter Pelunasan : Yes</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:08 PM</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>TC_RepayForm_08 : View data dengan filter Pelunasan : No</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>TC_RepayForm_09 : View data dengan filter Pelunasan : Insurance</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:58:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>TC_RepayForm_10 : View data dengan filter Pelunasan : Advance</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>TC_RepayForm_11 : Verifikasi isi filter Status</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>TC_RepayForm_12 : View data dengan filter Status : All</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='29' id='29'>TC_RepayForm_13 : View data dengan filter Status : Waiting for approval</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:58:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='31' id='31'>TC_RepayForm_14 : View data dengan filter Status : Pending Batch Run</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:58:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='33' id='33'>TC_RepayForm_15 : View data dengan filter Status : Approved</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:58:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='35' id='35'>TC_RepayForm_16 : View data dengan filter Status : Rejected</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:58:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>TC_RepayForm_17 : View data dengan filter Status : Approval Expired</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:39 PM</td>
+<td>
+<a href="#" class="linked" test-id='39' id='39'>TC_RepayForm_18 : Verifikasi isi filter Partner</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='41' id='41'>TC_RepayForm_19 : View data dengan filter Partner : All</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='43' id='43'>TC_RepayForm_20 : View data dengan filter Partner : pilih salah satu</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='45' id='45'>TC_RepayForm_21 : Verifikasi isi filter Status Amount Repayment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='47' id='47'>TC_RepayForm_22 : View data dengan filter Status Amount Repayment : All</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='49' id='49'>TC_RepayForm_23 : View data dengan filter Status Amount Repayment : Sesuai</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:58:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='51' id='51'>TC_RepayForm_24 : View data dengan filter Status Amount Repayment : Kurang Bayar</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:59:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='53'>TC_RepayForm_25 : View data dengan filter Status Amount Repayment : Lebih Bayar</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:59:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='55' id='55'>TC_RepayForm_26 : Verifikasi isi filter Status Batch No</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:59:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='57' id='57'>TC_RepayForm_27 : View data dengan filter Batch No : pilih salah satu</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="spark/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
